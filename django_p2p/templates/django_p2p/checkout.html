@@ -1,0 +1,70 @@
+{% extends "django_p2p/base.html" %}
+
+{% block content %}
+
+
+    <form action="{{ URL_POST }}" method="post">
+
+        <div>
+            {# DATOS DEL PAGADOR #}
+            <p>
+                <label>
+                    Tipo de identificación:
+                    <input name="payerIDType" type="text" value="CC">
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    Cedula:
+                    <input name="payerID" type="text" value="1129000111">
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    Nombre completo:
+                    <input name="ShopperName" type="text"
+                           value="Fulano Detal">
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    Correo:
+                    <input name="ShopperEmail" type="text"
+                           value="fulanodetal@gmail.com">
+                </label>
+            </p>
+
+        </div>
+
+        <div style="display: none">
+                    {# DATOS DEL PAGO #}
+                    <input name="HashString" type="text" value="{{ SIGNATURE }}">
+                    <input name="CustomerSiteID" type="text" value="{{ CUSTOMER_SITE_ID }}">
+                    <input name="Reference" type="text" value="{{ REFERENCE_CODE }}">
+                    <input name="Currency" type="text" value="COP">
+                    <input name="TotalAmount" type="text" value="{{ PRICE_TOTAL }}">
+                    <input name="TaxAmount" type="text" value="{{ PRICE_TAXES }}">
+                    <input name="DevolutionBase" type="text" value="{{ PRICE }}">
+                    <input name="OverrideReturn" type="text" value="{{ SITE_URL_CALLBACK }}">
+                    <input name="ExtraData" type="text" value="[Algo que quieras recibir de vuelta en el callback]">
+                    <input name="Language" type="text" value="ES">
+
+                    {# DATOS DEL DESPACHO #}
+                    <input name="buyerName" type="text" value="LA EMPRESA EXITO SAS LTDA SA">
+                </div>
+
+                <div>
+
+                    <div class="block clearfix mb30">
+                        <input type="submit" class="btn btn-primary btn-large pull-right" value="Pago Seguro">
+                    </div>
+                    <div class="block clearfix">
+                        <img src="http://donaccion.org/blog/wp-content/uploads/2012/09/logo-con-slogan.jpg"/>
+                    </div>
+                </div>
+            </form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "django_p2p/base.html" %}
+
+{% block content %}
+    <h2>Carrito</h2>
+    <ul>
+        <li>
+            Cocacola 3 lts x 10 - $30.000
+        </li>
+        <li>
+            Chocorramo x 100 - $100.000
+        </li>
+    </ul>
+
+    <p>Total: 130.000 + IVA</p>
+
+    <p>
+        <a href="{% url "checkout" %}">Pagar con placetopay</a>
+    </p>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "django_p2p/base.html" %}
+
+{% block content %}
+
+    <h1 class="section-title">Resumen de la transacción</h1>
+    <h2>{{ result }}</h2>
+    {% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+    <p>Aqui una tablita que requiere place to pay</p>
+
+
+    <p>Fin del pago. gracias.</p>
+
+{% endblock %}
